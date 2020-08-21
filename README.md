@@ -5,11 +5,11 @@ I broke it up through branching for each game to simplify downloading individual
 
 Projects contained within:
 
-  All Projects with MLLearning tag:
+  All Projects with MLLearning tag
   
-    - These are projects that are the result of me following along with a paid Machine Learning course focused in Unity.
+    These are projects that are the result of me following along with a paid Machine Learning course focused in Unity.
     
-    - I have embellished some of them when I found it more interesting and wanted to see how far I could go, or to see what else I could learn from it.
+    I have embellished some of them when I found it more interesting and wanted to see how far I could go, or to see what else I could learn from it.
     
   Other Projects:
   
