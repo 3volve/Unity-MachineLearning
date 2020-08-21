@@ -3,13 +3,13 @@ A collection of the projects I am working on in Unity focused around teaching my
 
 I broke it up through branching for each game to simplify downloading individual examples.
 
-All Projects with MLLearning tag:
+Projects contained within this repository:
   
-- These are projects that are the result of me following along with a paid Machine Learning course focused in Unity.
+- All Projects with MLLearning tag:
+  
+  - These are projects that are the result of me following along with a paid Machine Learning course focused in Unity.
     
-- I have embellished some of them when I found it more interesting and wanted to see how far I could go, or to see what else I could learn from it.
-    
-Other Projects:
+  - I have embellished some of them when I found it more interesting and wanted to see how far I could go, or to see what else I could learn from it.
   
 - RogueLike ML Game is a game based around the question: "what sort of game type would have enough enemies dying that it would actually benefit when using a
   Genetic Algorithm to learn how to fight the player, but still be worth not needing to just write a simple 'AI go here' script?"
