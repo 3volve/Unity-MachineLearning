@@ -1,6 +1,8 @@
 # Unity-MachineLearning
 A collection of the projects I am working on in Unity focused around teaching myself machine learning.
 
+I broke it up through branching for each game to simplify downloading individual examples.
+
 Projects contained within:
   All Projects with MLLearning tag:
     - These are projects that are the result of me following along with a paid Machine Learning course focused in Unity.
