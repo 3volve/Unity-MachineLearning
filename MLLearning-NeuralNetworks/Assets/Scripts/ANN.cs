@@ -25,7 +25,11 @@ public class ANN
             layers.Add(new Layer(numNeuronsPerHidden, numInputs));
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             for (int i = 0; i < numHiddenLayers - 1; i++) //might be plus
+=======
+            for (int i = 0; i < numHiddenLayers - 1; i++)
+>>>>>>> Stashed changes
 =======
             for (int i = 0; i < numHiddenLayers - 1; i++)
 >>>>>>> Stashed changes
@@ -58,6 +62,7 @@ public class ANN
             for (int j = 0; j < layers[i].numNeurons; j++)
             {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 double N = 0;
                 layers[i].neurons[j].inputs.Clear();
 
@@ -75,6 +80,8 @@ public class ANN
 
         UpdateWeights(outputs);
 =======
+=======
+>>>>>>> Stashed changes
                 Neuron curNeuron = layers[i].neurons[j];
                 double N = 0;
 
@@ -97,11 +104,15 @@ public class ANN
         }
 
         UpdateWeights(outputs, desiredOutput);
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
         return outputs;
     }
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     void UpdateWeights(List<double> outputs)
     {
@@ -113,6 +124,8 @@ public class ANN
         return 0;
     }
 =======
+=======
+>>>>>>> Stashed changes
     void UpdateWeights(List<double> outputs, List<double> desiredOutputs)
     {
         double error;
@@ -187,5 +200,8 @@ public class ANN
     double ArcTan(double value) => System.Math.Atan(value);
 
     double Softsign(double value) => value / (1 + System.Math.Abs(value));
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }

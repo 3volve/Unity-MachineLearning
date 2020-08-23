@@ -20,7 +20,10 @@ public class Neuron
             weights.Add(Random.Range(-1.0f, 1.0f));
     }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 
     public void Reset()
     {
@@ -30,5 +33,8 @@ public class Neuron
         for (int i = 0; i < numInputs; i++)
             weights.Add(Random.Range(-1.0f, 1.0f));
     }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }

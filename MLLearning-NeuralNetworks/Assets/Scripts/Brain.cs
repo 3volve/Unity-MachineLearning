@@ -1,6 +1,10 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ﻿using System.Collections;
 using System.Collections.Generic;
+=======
+﻿using System.Collections.Generic;
+>>>>>>> Stashed changes
 =======
 ﻿using System.Collections.Generic;
 >>>>>>> Stashed changes
@@ -8,6 +12,7 @@ using UnityEngine;
 
 public class Brain : MonoBehaviour
 {
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     // Start is called before the first frame update
     void Start()
@@ -20,6 +25,8 @@ public class Brain : MonoBehaviour
     {
         
 =======
+=======
+>>>>>>> Stashed changes
     ANN ann;
     double sumSquareError = double.MaxValue;
     readonly double errorAchievement = 0.01;
@@ -83,6 +90,9 @@ public class Brain : MonoBehaviour
         if (System.Math.Abs(num1 - result) < delta) return result;
 
         else return num1;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     }
 }
