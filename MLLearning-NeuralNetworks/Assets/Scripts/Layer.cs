@@ -14,4 +14,13 @@ public class Layer
         for (int i = 0; i < numNeurons; i++)
             neurons.Add(new Neuron(nInputs));
     }
+<<<<<<< Updated upstream
+=======
+
+    public void Reset()
+    {
+        foreach (Neuron neuron in neurons)
+            neuron.Reset();
+    }
+>>>>>>> Stashed changes
 }

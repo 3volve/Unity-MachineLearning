@@ -24,7 +24,11 @@ public class ANN
         {
             layers.Add(new Layer(numNeuronsPerHidden, numInputs));
 
+<<<<<<< Updated upstream
             for (int i = 0; i < numHiddenLayers - 1; i++) //might be plus
+=======
+            for (int i = 0; i < numHiddenLayers - 1; i++)
+>>>>>>> Stashed changes
                 layers.Add(new Layer(numNeuronsPerHidden, numNeuronsPerHidden));
 
             layers.Add(new Layer(numOutputs, numNeuronsPerHidden));
@@ -53,6 +57,7 @@ public class ANN
 
             for (int j = 0; j < layers[i].numNeurons; j++)
             {
+<<<<<<< Updated upstream
                 double N = 0;
                 layers[i].neurons[j].inputs.Clear();
 
@@ -69,10 +74,35 @@ public class ANN
         }
 
         UpdateWeights(outputs);
+=======
+                Neuron curNeuron = layers[i].neurons[j];
+                double N = 0;
+
+                curNeuron.inputs.Clear();
+
+                for (int k = 0; k < curNeuron.numInputs; k++)
+                {
+                    curNeuron.inputs.Add(inputs[k]);
+                    N += curNeuron.weights[k] * inputs[k];
+                }
+
+                N -= curNeuron.bias;
+
+                if (i == numHiddenLayers)
+                     curNeuron.output = ActivationFunctionO(N);
+                else curNeuron.output = ActivationFunctionH(N);
+
+                outputs.Add(curNeuron.output);
+            }
+        }
+
+        UpdateWeights(outputs, desiredOutput);
+>>>>>>> Stashed changes
 
         return outputs;
     }
 
+<<<<<<< Updated upstream
     void UpdateWeights(List<double> outputs)
     {
 
@@ -82,4 +112,80 @@ public class ANN
     {
         return 0;
     }
+=======
+    void UpdateWeights(List<double> outputs, List<double> desiredOutputs)
+    {
+        double error;
+
+        for (int i = numHiddenLayers; i >= 0; i--)
+        {
+            for (int j = 0; j < layers[i].numNeurons; j++)
+            {
+                Neuron curNeuron = layers[i].neurons[j];
+
+                if (i == numHiddenLayers)
+                {
+                    error = desiredOutputs[j] - outputs[j];
+                    curNeuron.errorGradient = outputs[j] * (1 - outputs[j]) * error;
+                    //errorGradient calculated with Delta Rule.
+                }
+                else
+                {
+                    curNeuron.errorGradient = curNeuron.output * (1 - curNeuron.output);
+
+                    double errorGradSum = 0;
+                    
+                    for (int p = 0; p < layers[i + 1].numNeurons; p++)
+                        errorGradSum += layers[i + 1].neurons[p].errorGradient * layers[i + 1].neurons[p].weights[j];
+
+                    curNeuron.errorGradient *= errorGradSum;
+                }
+
+                for (int k = 0; k < curNeuron.numInputs; k++)
+                {
+                    double curInputValue = curNeuron.inputs[k];
+
+                    if (i == numHiddenLayers)
+                    {
+                        error = desiredOutputs[j] - outputs[j];
+                        curNeuron.weights[k] += alpha * curInputValue * error;
+                    }
+                    else curNeuron.weights[k] += alpha * curInputValue * curNeuron.errorGradient;
+                }
+
+                curNeuron.bias += alpha * -1 * curNeuron.errorGradient;
+            }
+        }
+    }
+
+    public void Reset()
+    {
+        foreach (Layer layer in layers)
+            layer.Reset();
+    }
+
+    double ActivationFunctionH(double value) => ReLu(value);
+
+    double ActivationFunctionO(double value) => Sigmoid(value);
+
+    double Step(double value) => value < 0 ? 0 : 1;
+
+    double ReLu(double value) => value < 0 ? 0 : value;
+
+    double LeakyReLu(double value) => value < 0 ? value * 0.01 : value;
+
+    double Sigmoid(double value)
+    {
+        double k = System.Math.Exp(value);
+        return k / (1.0f + k);
+    }
+
+    double Sinusoid(double value) => System.Math.Sin(value);
+
+    double TanH(double value) => 2 * Sigmoid(2 * value) - 1;
+
+    double ArcTan(double value) => System.Math.Atan(value);
+
+    double Softsign(double value) => value / (1 + System.Math.Abs(value));
+>>>>>>> Stashed changes
 }

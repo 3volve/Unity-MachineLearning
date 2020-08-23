@@ -19,4 +19,16 @@ public class Neuron
         for (int i = 0; i < numInputs; i++)
             weights.Add(Random.Range(-1.0f, 1.0f));
     }
+<<<<<<< Updated upstream
+=======
+
+    public void Reset()
+    {
+        bias = Random.Range(-1.0f, 1.0f);
+
+        weights.Clear();
+        for (int i = 0; i < numInputs; i++)
+            weights.Add(Random.Range(-1.0f, 1.0f));
+    }
+>>>>>>> Stashed changes
 }
