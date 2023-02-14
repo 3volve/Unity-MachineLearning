@@ -3,6 +3,8 @@ A collection of the projects I am working on in Unity focused around teaching my
 
 I broke it up through branching for each game to simplify downloading individual examples.
 
+If you want to check out the different projects, switch to one of the 3 non-master branches in this repo.
+
 All Projects with MLLearning tag:
   
 - These are projects that are the result of me following along with a paid Machine Learning course focused in Unity.
